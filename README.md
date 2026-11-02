@@ -1,2 +1,3 @@
   ysn.xyz
-  is a kid'school page
+  is a Github Page
+  Owner is Yumiseno
