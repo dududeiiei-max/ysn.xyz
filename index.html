@@ -1,0 +1,240 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Portfolio</title>
+    <!-- Tailwind CSS for sleek utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for minimal icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fafafa',
+                            100: '#f4f4f5',
+                            200: '#e4e4e7',
+                            800: '#27272a',
+                            900: '#18181b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased selection:bg-brand-900 selection:text-brand-50">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-brand-50/80 backdrop-blur-md z-50 border-b border-brand-200/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight hover:opacity-70 transition-opacity">Jane Doe.</a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                <a href="#about" class="hover:text-brand-900 transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-900 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-brand-900 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-brand-900 transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-brand-900 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-50 border-b border-brand-200 px-6 py-4 space-y-3 text-sm font-medium text-gray-600">
+            <a href="#about" class="block hover:text-brand-900">About</a>
+            <a href="#skills" class="block hover:text-brand-900">Skills</a>
+            <a href="#projects" class="block hover:text-brand-900">Projects</a>
+            <a href="#contact" class="block hover:text-brand-900">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-3xl text-center">
+            <span class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-brand-800 uppercase bg-brand-200/60 rounded-full">
+                Hello & Welcome
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-brand-900 mb-6 leading-tight">
+                Crafting simple & elegant digital experiences.
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                I'm a designer and developer focused on building clean, functional, and user-friendly web applications.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 bg-brand-900 text-brand-50 font-medium rounded-full hover:bg-brand-800 transition-all shadow-sm hover:shadow-md">
+                    View My Work
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 bg-brand-100 border border-brand-200 text-brand-900 font-medium rounded-full hover:bg-brand-200 transition-all">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 border-t border-brand-200/60 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-4">About Me</h2>
+            <h3 class="text-2xl sm:text-3xl font-semibold mb-6">Passionate about minimalism and functional design.</h3>
+            <p class="text-gray-600 leading-relaxed text-base sm:text-lg font-light mb-6">
+                With over 4 years of experience in web design and front-end development, I help creators and businesses present their ideas through simple, elegant digital interfaces.
+            </p>
+            <p class="text-gray-600 leading-relaxed text-base sm:text-lg font-light">
+                When I'm not coding or tweaking pixels, you can find me reading minimalist philosophy, enjoying specialized coffee, or exploring outdoor photography.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-brand-100/50 border-t border-brand-200/60 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="p-6 bg-brand-50 rounded-2xl border border-brand-200/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center mb-4 text-brand-900">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">Web Development</h4>
+                    <p class="text-sm text-gray-500 font-light">HTML5, CSS3, JavaScript, Tailwind CSS, React.</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="p-6 bg-brand-50 rounded-2xl border border-brand-200/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center mb-4 text-brand-900">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">UI/UX Design</h4>
+                    <p class="text-sm text-gray-500 font-light">Figma, Wireframing, Prototyping, Design Systems.</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="p-6 bg-brand-50 rounded-2xl border border-brand-200/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center mb-4 text-brand-900">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">Responsive Design</h4>
+                    <p class="text-sm text-gray-500 font-light">Mobile-first design, Cross-browser compatibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 border-t border-brand-200/60 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Selected Projects</h2>
+            <div class="space-y-8">
+                <!-- Project 1 -->
+                <div class="p-8 bg-brand-100/30 rounded-3xl border border-brand-200/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:bg-brand-100/60 transition-colors">
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Web Application</span>
+                        <h3 class="text-xl font-bold mt-1 mb-2">Minimalist Notes App</h3>
+                        <p class="text-gray-600 text-sm font-light max-w-xl">A lightweight browser-based markdown editor focused on distraction-free writing.</p>
+                    </div>
+                    <a href="#" class="px-5 py-2.5 bg-brand-900 text-brand-50 text-sm font-medium rounded-full hover:bg-brand-800 transition-colors whitespace-nowrap">
+                        View Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    </a>
+                </div>
+                <!-- Project 2 -->
+                <div class="p-8 bg-brand-100/30 rounded-3xl border border-brand-200/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:bg-brand-100/60 transition-colors">
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">E-Commerce</span>
+                        <h3 class="text-xl font-bold mt-1 mb-2">Nordic Store Concept</h3>
+                        <p class="text-gray-600 text-sm font-light max-w-xl">A sleek e-commerce landing page crafted for modern interior design products.</p>
+                    </div>
+                    <a href="#" class="px-5 py-2.5 bg-brand-900 text-brand-50 text-sm font-medium rounded-full hover:bg-brand-800 transition-colors whitespace-nowrap">
+                        View Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-brand-900 text-brand-50 px-6 rounded-t-3xl sm:rounded-t-[2.5rem]">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Let's work together.</h2>
+            <p class="text-gray-400 font-light mb-8 max-w-md mx-auto">
+                Have a project in mind or just want to say hi? Feel free to reach out.
+            </p>
+            
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="mailto:hello@example.com" class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-50 hover:text-brand-900 transition-all" title="Email">
+                    <i class="fa-regular fa-envelope text-lg"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-50 hover:text-brand-900 transition-all" title="GitHub">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-50 hover:text-brand-900 transition-all" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-50 hover:text-brand-900 transition-all" title="Twitter">
+                    <i class="fa-brands fa-x-twitter text-lg"></i>
+                </a>
+            </div>
+
+            <!-- Simple Interactive Copy Email Button -->
+            <button id="copy-email-btn" onclick="copyEmail()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-800 hover:bg-brand-800/80 text-sm font-medium transition-all text-gray-300">
+                <i class="fa-regular fa-copy"></i>
+                <span id="btn-text">Copy Email Address</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-gray-500 text-xs py-8 text-center border-t border-brand-800">
+        <p>&copy; 2026 Jane Doe. Built with simplicity on GitHub Pages.</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy email feature
+        function copyEmail() {
+            const email = "hello@example.com";
+            const btnText = document.getElementById('btn-text');
+
+            // Fallback copy method for iframe compatibility
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Update button feedback text
+            btnText.textContent = "Copied to Clipboard!";
+            setTimeout(() => {
+                btnText.textContent = "Copy Email Address";
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
+```
